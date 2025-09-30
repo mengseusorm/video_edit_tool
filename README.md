@@ -127,7 +127,7 @@ video-terminal-tool/
 ║                        Welcome                               ║
 ║                                                              ║
 ║              🎬 VIDEO TERMINAL TOOL 🎬                      ║
-║              Resize & Split Videos Like a Pro!              ║
+║              Resize & Split Videos Like a Pro!               ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
 
