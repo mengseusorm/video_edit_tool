@@ -207,7 +207,7 @@ def resize_video():
                     ffmpeg
                     .input(input_file)
                     .filter('scale', target_resolution)
-                    .output(output_file, vcodec='libx264', acodec='aac')
+                    .output(output_file, vcodec='libx264', acodec='copy')
                     .overwrite_output()
                     .run(capture_stdout=True, capture_stderr=True)
                 )
@@ -448,12 +448,12 @@ def crop_video():
             ) as progress:
                 task = progress.add_task("Cropping video...", total=None)
                 
-                # Use the correct FFmpeg crop filter format
+                # Use the correct FFmpeg crop filter format with audio copy
                 (
                     ffmpeg
                     .input(input_file)
                     .filter('crop', int(width), int(height), f'(iw-{width})/2', f'(ih-{height})/2')
-                    .output(output_file, vcodec='libx264', acodec='aac')
+                    .output(output_file, vcodec='libx264', acodec='copy')
                     .overwrite_output()
                     .run(capture_stdout=True, capture_stderr=True)
                 )
